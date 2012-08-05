@@ -17,4 +17,6 @@ Ruby client library to Neo4jRest API
 Copyright (c) 2011 Carlo Alberto Degli Atti. See LICENSE.txt for
 further details.
 
-=======
+== todo
+
+ - Failure on uninitialized neo4j connection
