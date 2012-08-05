@@ -1,10 +1,10 @@
 require 'neology/relationship_index_mixin/relationship_index_mixin'
-require 'neology/relationship_property_mixin/relationship_property_mixin'
+require 'neology/property_mixin/property_mixin'
 require 'neology/relationship_mixin/class_methods'
 
 module Neology
   module RelationshipMixin
-    include Neology::RelationshipPropertyMixin
+    include Neology::PropertyMixin
 
     attr_reader :start_node
     attr_reader :end_node
@@ -21,6 +21,10 @@ module Neology
 
     def properties
       inner_relationship['data']
+    end
+
+    def node_or_rel
+      'relationship'
     end
 
     def id
@@ -45,7 +49,7 @@ module Neology
 
       base.extend Neology::RelationshipMixin::ClassMethods
       base.extend Neology::RelationshipIndexMixin::ClassMethods
-      base.extend Neology::RelationshipPropertyMixin::ClassMethods
+      base.extend Neology::PropertyMixin::ClassMethods
     end
 
   end

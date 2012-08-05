@@ -27,6 +27,14 @@ module Neology
       inner_node['data']
     end
 
+    def properties=(args)
+      inner_node['data'] = args
+    end
+
+    def node_or_rel
+      'node'
+    end
+
     def == (other)
       inner_node == other.inner_node if other
     end
@@ -37,7 +45,6 @@ module Neology
     end
 
     def self.included(base)
-
       base.instance_eval do
         class << self
           alias_method :old_new, :new
@@ -49,7 +56,6 @@ module Neology
       base.extend Neology::RelsMixin::ClassMethods
       base.extend Neology::HasMixin::ClassMethods
       base.extend Neology::IndexMixin::ClassMethods
-
     end
 
   end

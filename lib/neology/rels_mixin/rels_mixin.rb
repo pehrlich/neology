@@ -3,11 +3,9 @@ require 'neology/rels_mixin/class_methods'
 require 'neology/rels_mixin/n_wrapper'
 
 module Neology
-
   module RelsMixin
 
     def relationship rel_name
-
       rel_decl = self.class.get_rel_decl rel_name
       value = $neo_server.get_node_relationships(self.inner_node, "all", rel_name)
 
@@ -44,5 +42,4 @@ module Neology
     end
 
   end
-
 end
