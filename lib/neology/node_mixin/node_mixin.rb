@@ -23,6 +23,10 @@ module Neology
       RestUtils.get_id @inner_node
     end
 
+    def properties
+      inner_node['data']
+    end
+
     def == (other)
       inner_node == other.inner_node if other
     end

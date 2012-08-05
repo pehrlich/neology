@@ -13,12 +13,16 @@ module Neology
 
     def initialize inner_relationship, start_node, end_node
       @inner_relationship = inner_relationship
-      @start_node         = start_node
-      @end_node           = end_node
+      @start_node = start_node
+      @end_node = end_node
     end
 
     def inner_relationship
       @inner_relationship
+    end
+
+    def properties
+      inner_relationship['data']
     end
 
     def id
