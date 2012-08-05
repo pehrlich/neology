@@ -67,7 +67,6 @@ describe "node specs" do
     end
 
     it "should the relationship properties be converted to native values" do
-
       user   = Neology::Node.new
       user_2 = Neology::Node.new
       rel    = NeologyRelationshipAllProperties.new :test, user, user_2

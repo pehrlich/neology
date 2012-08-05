@@ -3,9 +3,7 @@ require 'neology/relationship_property_mixin/relationship_property_mixin'
 require 'neology/relationship_mixin/class_methods'
 
 module Neology
-
   module RelationshipMixin
-
     include Neology::RelationshipPropertyMixin
 
     attr_reader :start_node
@@ -39,7 +37,6 @@ module Neology
     end
 
     def self.included(base)
-
       base.instance_eval do
         class << self
           alias_method :old_new, :new
@@ -52,5 +49,4 @@ module Neology
     end
 
   end
-
 end
