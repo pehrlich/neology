@@ -31,8 +31,12 @@ module Neology
       end
 
       def find query
-        #p "querying: #{self.name},#{_index_name}, #{query}"
-        QueryBuilder.new self.name, _index_name, query
+        if query.is_a? Fixnum
+          self.load query
+        else
+          #p "querying: #{self.name},#{_index_name}, #{query}"
+          QueryBuilder.new self.name, _index_name, query
+        end
       end
 
       def _index_name

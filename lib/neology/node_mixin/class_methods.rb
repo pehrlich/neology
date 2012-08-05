@@ -23,6 +23,9 @@ module Neology
 
       def load graph_node_id
         graph_node = $neo_server.get_node(graph_node_id)
+        unless graph_node
+          return nil
+        end
         _load graph_node
       end
 
